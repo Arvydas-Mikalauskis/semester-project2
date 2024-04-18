@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/558153e5d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../styles/output.css" />
+    <script src="../app/utils.js" defer></script>
+    <title>Home</title>
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="container relative mx-auto p-6">
+      <div class="flex items-center justify-between space-x-20 my-6">
+        <div class="z-30">
+          <img
+            class="text-black h-10"
+            id="logo"
+            src="../assets/images/sold.svg"
+            alt="Logo"
+          />
+        </div>
+        <div
+          class="hidden items-center space-x-10 uppercase text-grayBlue md:flex"
+        >
+          <a href="" class="tracking-widest hover:text-softRed">Auction</a>
+          <a href="#faq-accordion" class="tracking-widest hover:text-softRed"
+            >FAQ</a
+          >
+          <a href="" class="tracking-widest hover:text-softRed">Contact</a>
+          <a
+            href=""
+            class="text-white bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white"
+            >Login</a
+          >
+        </div>
+        <!-- Mr hamburger menu -->
+        <button
+          id="menu-btn"
+          class="z-30 block md:hidden focus:outline-none hamburger"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div
+        class="fixed hidden inset-0 z-20 flex flex-col items-center self-end h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+      >
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">Auction</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">FAQ</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">Contact</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">Login</a>
+        </div>
+      </div>
+    </nav>
+    <!-- -------------- -->
+
+    <!-- hero section -->
+    <section id="hero">
+      <!-- header image and content -->
+      <div
+        class="container flex flex-col-reverse mx-auto p-6 lg:flex-row lg:mb-0"
+      >
+        <div class="flex flex-col space-y-10 lg:mt-16 lg:w-1/2">
+          <h1
+            class="text-3xl font-semibold text-center lg:text-6xl lg:text-left"
+          >
+            An online auction
+          </h1>
+          <p
+            class="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0"
+          >
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam,
+            deleniti!
+          </p>
+        </div>
+        <div class="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
+          <div class="bg-hero"></div>
+          <img
+            src="../assets/images/undraw_world_re_768g.svg"
+            alt=""
+            class="relative z-10 lg:top-24 xl:top-0 overflow-x-visible"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+      <div class="container mx-auto mt-16 px-6 md:mx-0">
+        <h2 class="mb-6 text-4xl font-semibold text-center">About:</h2>
+        <p class="max-w-md mx-auto text-center text-grayBlue">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae
+          quibusdam magnam sit fuga amet facere?Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Doloremque, sunt!
+        </p>
+      </div>
+    </section>
+
+    <!--    Tabs and panels -->
+    <section id="tabs">
+      <div class="container relative mx-auto my-6 mb-32 mt-12 px-6">
+        <div class="bg-tabs"></div>
+        <div
+          class="flex flex-col justify-center max-w-xl mx-auto mb-6 border-b md:space-x-10 md:flex-row"
+        >
+          <!--    Tab 1 -->
+          <div
+            class="flex justify-center text-center text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
+            data-target="panel-1"
+          >
+            <div
+              class="py-5 border-b-4 border-softRed cursor-pointer"
+              data-target="panel-1"
+            >
+              Easy
+            </div>
+          </div>
+          <!--    Tab 2 -->
+          <div
+            class="flex justify-center text-center text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
+            data-target="panel-2"
+          >
+            <div
+              class="py-5 border-softRed cursor-pointer"
+              data-target="panel-2"
+            >
+              Fast
+            </div>
+          </div>
+          <!--    Tab 3 -->
+          <div
+            class="flex justify-center text-center text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
+            data-target="panel-3"
+          >
+            <div
+              class="py-5 border-softRed cursor-pointer"
+              data-target="panel-3"
+            >
+              Simple
+            </div>
+          </div>
+        </div>
+        <section id="panels" class="container mx-auto">
+          <!-- panel nr 1 -->
+          <div
+            class="flex flex-col py-5 md:flex-row md:space-x-7 panel panel-1"
+          >
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="../assets/images/task-list.svg"
+                alt=""
+                class="relative z-10"
+              />
+            </div>
+            <!-- Panel content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-32 text-2xl font-semibold text-center md:mt-0 md:text-left md:pt-20"
+              >
+                Lorem ipsum
+              </h3>
+              <p class="max-w-md text-center text-grayBlue md:text-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+                dolore.
+              </p>
+            </div>
+          </div>
+          <!-- panel nr 2 -->
+          <div
+            class="flex flex-col hidden py-5 md:flex-row md:space-x-7 panel panel-2"
+          >
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="../assets/images/online-shopping.svg"
+                alt=""
+                class="relative z-10"
+              />
+            </div>
+            <!-- Panel content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-32 text-2xl font-semibold text-center md:mt-0 md:text-left md:pt-20"
+              >
+                Lorem ipsum
+              </h3>
+              <p class="max-w-md text-center text-grayBlue md:text-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+                dolore.
+              </p>
+            </div>
+          </div>
+          <!-- panel nr 3 -->
+          <div
+            class="flex flex-col hidden py-5 md:flex-row md:space-x-7 panel panel-3"
+          >
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="../assets/images/delivery.svg"
+                alt=""
+                class="relative z-10"
+              />
+            </div>
+            <!-- Panel content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-32 text-2xl font-semibold text-center md:mt-0 md:text-left md:pt-20"
+              >
+                Lorem ipsum
+              </h3>
+              <p class="max-w-md text-center text-grayBlue md:text-left">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
+                dolore.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- FAQ accordion -->
+    <section id="faq">
+      <div class="container mx-auto">
+        <h2 class="mb-6 text-3xl font-semibold text-center md:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p class="max-w-lg mx-auto px-6 text-center text-grayBlue">
+          Here are some of our FAQs. If you have any other questions you'd like
+          answered please feel free to contact us.
+        </p>
+      </div>
+    </section>
+    <section id="faq-accordion">
+      <div class="container mx-auto px-6 mb-32">
+        <div class="max-w-2xl m-8 mx-auto overflow-hidden">
+          <div class="py-1 border-b outline-none group" tabindex="1">
+            <div
+              class="flex justify-between items-center py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                What is auction
+              </div>
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <i class="fa-solid fa-angles-down"></i>
+              </div>
+            </div>
+            <div
+              class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat ipsum molestias necessitatibus eos eaque quisquam.
+                Dolores laboriosam error aspernatur nobis?
+              </p>
+            </div>
+          </div>
+
+          <!-- Second tab of faq -->
+          <div class="py-1 border-b outline-none group" tabindex="1">
+            <div
+              class="flex justify-between items-center py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                How it works
+              </div>
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <i class="fa-solid fa-angles-down"></i>
+              </div>
+            </div>
+            <div
+              class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat ipsum molestias necessitatibus eos eaque quisquam.
+                Dolores laboriosam error aspernatur nobis?
+              </p>
+            </div>
+          </div>
+
+          <!-- thirds tab of faq -->
+          <div class="py-1 border-b outline-none group" tabindex="1">
+            <div
+              class="flex justify-between items-center py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                How to get credits
+              </div>
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <i class="fa-solid fa-angles-down"></i>
+              </div>
+            </div>
+            <div
+              class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat ipsum molestias necessitatibus eos eaque quisquam.
+                Dolores laboriosam error aspernatur nobis?
+              </p>
+            </div>
+          </div>
+
+          <!-- fourth tab of faq -->
+          <div class="py-1 border-b outline-none group" tabindex="1">
+            <div
+              class="flex justify-between items-center py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                Delivery info
+              </div>
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <i class="fa-solid fa-angles-down"></i>
+              </div>
+            </div>
+            <div
+              class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellat ipsum molestias necessitatibus eos eaque quisquam.
+                Dolores laboriosam error aspernatur nobis?
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-veryDarkBlue">
+      <div class="mx-w-lg mx-auto py-24">
+        <p
+          class="mb-6 text-lg -tracking-widest text-center text-white uppercase"
+        >
+          10,000 Members already Joined us
+        </p>
+        <h2
+          class="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl"
+        >
+          Stay up-to-date with what we're doing
+        </h2>
+        <form
+          action=""
+          class="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0"
+        >
+          <div
+            class="flex flex-col justify-between items-center mx-auto md:flex-row md:mx-0"
+          >
+            <input
+              type="text"
+              placeholder="Enter your email adress"
+              class="flex-1 px-6 pt-3 pb-2 mb-4 rounded-lg border-1 border-white focus-within:outline-none md:mr-3 md:mb-0"
+            />
+
+            <input
+              type="submit"
+              value="Contact Us"
+              class="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-softRed hover:opacity-90"
+            />
+          </div>
+        </form>
+      </div>
+    </footer>
+  </body>
+</html>

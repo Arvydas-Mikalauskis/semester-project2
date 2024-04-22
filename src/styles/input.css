@@ -52,10 +52,14 @@
 .open {
   transform: rotate(90deg);
   transform: translateY(0px);
+  position: fixed;
+  top: 50px;
+  right: 25px;
 }
 
 .open .hamburger-top {
   transform: rotate(45deg) translateY(6px) translateX(6px);
+  background-color: white;
 }
 
 .open .hamburger-middle {
@@ -64,4 +68,5 @@
 
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  background-color: white;
 }

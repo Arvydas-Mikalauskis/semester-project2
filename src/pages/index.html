@@ -23,7 +23,7 @@
       <div class="flex items-center justify-between space-x-20 my-6">
         <div class="z-30">
           <img
-            class="text-black h-10"
+            class="h-10"
             id="logo"
             src="../assets/images/sold.svg"
             alt="Logo"
@@ -45,7 +45,7 @@
         </div>
         <!-- Mr hamburger menu -->
         <button
-          id="menu-btn"
+          id="hamburgerMenu-btn"
           class="z-30 block md:hidden focus:outline-none hamburger"
         >
           <span class="hamburger-top"></span>
@@ -53,15 +53,16 @@
           <span class="hamburger-bottom"></span>
         </button>
       </div>
-      <!-- Mobile menu -->
+      <!-- Mobile nav menu -->
       <div
-        class="fixed hidden inset-0 z-20 flex flex-col items-center self-end h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+        id="mobileMenu"
+        class="fixed inset-0 z-20 hidden flex-col items-center self-end h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
       >
         <div class="w-full py-3 text-center">
           <a href="" class="block hover:text-softRed">Auction</a>
         </div>
         <div class="w-full py-3 text-center">
-          <a href="" class="block hover:text-softRed">FAQ</a>
+          <a href="#faq-accordion" class="block hover:text-softRed">FAQ</a>
         </div>
         <div class="w-full py-3 text-center">
           <a href="" class="block hover:text-softRed">Contact</a>
@@ -72,6 +73,57 @@
       </div>
     </nav>
     <!-- -------------- -->
+
+    <!-- Log in modal -->
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="fixed flex hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+      style="z-index: 200"
+    >
+      <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
+        <h2 class="text-2xl text-center mb-2 font-semibold">Log In</h2>
+        <img
+          class="h-10 mx-auto"
+          id="logo"
+          src="../assets/images/sold.svg"
+          alt="Logo"
+        />
+
+        <form id="logInForm">
+          <input
+            type="text"
+            placeholder="email@stud.noroff.no"
+            class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+          />
+          <button
+            type="submit"
+            class="mt-4 px-4 py-2 bg-softBlue bg-opacity-90 text-white rounded hover:bg-opacity-100 w-full"
+          >
+            Proceed
+          </button>
+          <button
+            type="button"
+            id="closeModal"
+            class="mt-4 px-4 py-2 bg-softRed text-white rounded hover:bg-red-600 w-full"
+          >
+            Close
+          </button>
+          <p class="mt-4 text-sm">
+            Don't have an account?
+            <a href="" class="text-green-500 font-medium"
+              >Register new profile</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
 
     <!-- hero section -->
     <section id="hero">
@@ -235,6 +287,193 @@
         </section>
       </div>
     </section>
+    <!-- Latest auctions  -->
+
+    <section>
+      <div class="mb-8">
+        <h2 class="text-3xl font-semibold mb-2 pl-12">Latest auctions</h2>
+        <p class="w-1/2 border-b-4 border-softRed"></p>
+      </div>
+      <div class="flex mb-8">
+        <!-- Card container -->
+        <div
+          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
+        >
+          <!-- Img container -->
+          <div>
+            <img
+              class="w-40 mx-auto duration-200 hover:scale-105"
+              src="../assets/images/headphone.png"
+              alt=""
+            />
+          </div>
+          <!-- Content container -->
+          <div class="space-y-2">
+            <h4 class="max-w-sm text-xl font-medium">
+              Razer Kraken kitty Edt Gaming headset
+            </h4>
+            <p class="text-sm font-light text-gray-400">
+              This offer is valid until April 30th or as long as stock lasts!
+            </p>
+          </div>
+
+          <div class="flex items-center space-x-3 group">
+            <div
+              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
+            ></div>
+            <div class="text-sm">50+ pcs. in stock</div>
+          </div>
+          <div class="flex flex-row justify-around items-center">
+            <div class="text-softBlue font-medium">
+              Current bid: <span class="text-gray-700">$499</span>
+            </div>
+            <button
+              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
+            >
+              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
+              bid
+            </button>
+          </div>
+          <div class="font-medium text-sm p-2 text-center">
+            The winner of the auction will be announced in: 24:00
+          </div>
+        </div>
+        <div
+          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
+        >
+          <!-- Img container -->
+          <div>
+            <img
+              class="w-40 mx-auto duration-200 hover:scale-105"
+              src="../assets/images/headphone.png"
+              alt=""
+            />
+          </div>
+          <!-- Content container -->
+          <div class="space-y-2">
+            <h4 class="max-w-sm text-xl font-medium">
+              Razer Kraken kitty Edt Gaming headset
+            </h4>
+            <p class="text-sm font-light text-gray-400">
+              This offer is valid until April 30th or as long as stock lasts!
+            </p>
+          </div>
+
+          <div class="flex items-center space-x-3 group">
+            <div
+              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
+            ></div>
+            <div class="text-sm">50+ pcs. in stock</div>
+          </div>
+          <div class="flex flex-row justify-around items-center">
+            <div class="text-softBlue font-medium">
+              Current bid: <span class="text-gray-700">$499</span>
+            </div>
+            <button
+              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
+            >
+              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
+              bid
+            </button>
+          </div>
+          <div class="font-medium text-sm p-2 text-center">
+            The winner of the auction will be announced in: 24:00
+          </div>
+        </div>
+        <div
+          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
+        >
+          <!-- Img container -->
+          <div>
+            <img
+              class="w-40 mx-auto duration-200 hover:scale-105"
+              src="../assets/images/headphone.png"
+              alt=""
+            />
+          </div>
+          <!-- Content container -->
+          <div class="space-y-2">
+            <h4 class="max-w-sm text-xl font-medium">
+              Razer Kraken kitty Edt Gaming headset
+            </h4>
+            <p class="text-sm font-light text-gray-400">
+              This offer is valid until April 30th or as long as stock lasts!
+            </p>
+          </div>
+
+          <div class="flex items-center space-x-3 group">
+            <div
+              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
+            ></div>
+            <div class="text-sm">50+ pcs. in stock</div>
+          </div>
+          <div class="flex flex-row justify-around items-center">
+            <div class="text-softBlue font-medium">
+              Current bid: <span class="text-gray-700">$499</span>
+            </div>
+            <button
+              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
+            >
+              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
+              bid
+            </button>
+          </div>
+          <div class="font-medium text-sm p-2 text-center">
+            The winner of the auction will be announced in: 24:00
+          </div>
+        </div>
+        <div
+          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
+        >
+          <!-- Img container -->
+          <div>
+            <img
+              class="w-40 mx-auto duration-200 hover:scale-105"
+              src="../assets/images/headphone.png"
+              alt=""
+            />
+          </div>
+          <!-- Content container -->
+          <div class="space-y-2">
+            <h4 class="max-w-sm text-xl font-medium">
+              Razer Kraken kitty Edt Gaming headset
+            </h4>
+            <p class="text-sm font-light text-gray-400">
+              This offer is valid until April 30th or as long as stock lasts!
+            </p>
+          </div>
+
+          <div class="flex items-center space-x-3 group">
+            <div
+              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
+            ></div>
+            <div class="text-sm">50+ pcs. in stock</div>
+          </div>
+          <div class="flex flex-row justify-around items-center">
+            <div class="text-softBlue font-medium">
+              Current bid: <span class="text-gray-700">$499</span>
+            </div>
+            <button
+              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
+            >
+              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
+              bid
+            </button>
+          </div>
+          <div class="font-medium text-sm p-2 text-center">
+            The winner of the auction will be announced in: 24:00
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center mb-24">
+        <button
+          class="bg-softBlue text-white border-2 shadow-md rounded-lg px-16 py-4 hover:scale-105"
+        >
+          Show more
+        </button>
+      </div>
+    </section>
+
     <!-- FAQ accordion -->
     <section id="faq">
       <div class="container mx-auto">

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/558153e5d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../styles/output.css" />
+    <script src="../app/utils.js" defer></script>
+    <title>Auction</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="container relative mx-auto p-6">
+      <div class="flex items-center justify-between space-x-20 my-6">
+        <div class="z-30">
+          <img
+            class="h-10"
+            id="logo"
+            src="../assets/images/sold.svg"
+            alt="Logo"
+          />
+        </div>
+        <div
+          class="hidden items-center space-x-10 uppercase text-grayBlue md:flex"
+        >
+          <a href="" class="tracking-widest hover:text-softRed">Home</a>
+          <a href="#faq-accordion" class="tracking-widest hover:text-softRed"
+            >FAQ</a
+          >
+          <a href="" class="tracking-widest hover:text-softRed">Contact</a>
+          <a
+            href=""
+            class="text-white bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white"
+            >Login</a
+          >
+        </div>
+        <!-- Mr hamburger menu -->
+        <button
+          id="hamburgerMenu-btn"
+          class="z-30 block md:hidden focus:outline-none hamburger"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <!-- Mobile nav menu -->
+      <div
+        id="mobileMenu"
+        class="fixed inset-0 z-20 hidden flex-col items-center self-end h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+      >
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">Home</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="#faq-accordion" class="block hover:text-softRed">FAQ</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">Contact</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">Login</a>
+        </div>
+      </div>
+    </nav>
+    <!-- Search/ filter products section -->
+    <section>
+      <div>
+        <h1 class="text-3xl font-semibold text-center mt-8">Active Auctions</h1>
+      </div>
+      <!-- Search bar -->
+      <div
+        class="flex mt-12 px-4 py-3 border-b border-b-slate-600 focus-within:border-b-softRed overflow-hidden max-w-md mx-auto font-sans"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 192.904 192.904"
+          width="18px"
+          class="fill-gray-600 mr-3"
+        >
+          <path
+            d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"
+          ></path>
+        </svg>
+        <input
+          type="search"
+          placeholder="Search..."
+          class="w-full outline-none text-sm"
+        />
+      </div>
+    </section>
+  </body>
+</html>

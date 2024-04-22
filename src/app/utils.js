@@ -1,5 +1,9 @@
 const tabs = document.querySelectorAll('.tab')
 const panels = document.querySelectorAll('.panel')
+const hamburgerBtn = document.getElementById('hamburgerMenu-btn')
+const mobileMenu = document.getElementById('mobileMenu')
+
+// Tabs menu switch
 
 tabs.forEach((tab) => tab.addEventListener('click', onTabClick))
 
@@ -21,4 +25,14 @@ function onTabClick(e) {
     .getElementById('panels')
     .getElementsByClassName(classString)[0]
     .classList.remove('hidden')
+}
+
+// Mobile navigation
+
+hamburgerBtn.addEventListener('click', navToggle)
+
+function navToggle() {
+  hamburgerBtn.classList.toggle('open')
+  mobileMenu.classList.toggle('flex')
+  mobileMenu.classList.toggle('hidden')
 }

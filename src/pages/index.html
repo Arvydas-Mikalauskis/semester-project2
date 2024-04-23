@@ -15,6 +15,7 @@
     ></script>
     <link rel="stylesheet" href="../styles/output.css" />
     <script src="../app/utils.js" defer></script>
+    <script src="../app/authentication/login.js" defer></script>
     <title>Home</title>
   </head>
   <body class="overflow-x-hidden">
@@ -38,6 +39,7 @@
           >
           <a href="" class="tracking-widest hover:text-softRed">Contact</a>
           <a
+            id="loginBtn"
             href=""
             class="text-white bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white"
             >Login</a
@@ -78,9 +80,9 @@
 
     <!-- Modal -->
     <div
-      id="modal"
+      id="loginModal"
       class="fixed flex hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
-      style="z-index: 200"
+      style="z-index: 300"
     >
       <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
         <h2 class="text-2xl text-center mb-2 font-semibold">Log In</h2>
@@ -91,13 +93,15 @@
           alt="Logo"
         />
 
-        <form id="logInForm">
+        <form id="loginForm">
           <input
+            id="loginEmail"
             type="text"
             placeholder="email@stud.noroff.no"
             class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
           />
           <input
+            id="loginPassword"
             type="password"
             placeholder="password"
             class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"

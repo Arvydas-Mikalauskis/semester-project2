@@ -13,15 +13,15 @@
       src="https://kit.fontawesome.com/558153e5d0.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../app/authentication/register.js" defer></script>
     <link rel="stylesheet" href="../styles/output.css" />
-    <script src="../app/utils.js" defer></script>
     <title>Sign up</title>
   </head>
   <body>
     <div class="flex items-center justify-center min-h-screen bg-slate-300">
       <!-- Card Container -->
       <div
-        class="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0"
+        class="relative flex flex-col max-h-screen m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0"
       >
         <!-- Left Side -->
         <div class="p-6 md:p-20 space-y-4">
@@ -31,29 +31,41 @@
             dignissimos voluptates officia est minus dolorem suscipit tempora
             alias ad ut!
           </p>
-          <input
-            type="email"
-            placeholder="Must be valid noroff email"
-            required
-            class="w-full p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-400"
-          />
-          <input
-            type="password"
-            placeholder="Must be atleast 8 digits"
-            required
-            class="w-full p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-400"
-          />
+          <form id="registerForm" action="submit" class="space-y-4">
+            <input
+              id="registerEmail"
+              type="email"
+              placeholder="Email adress. Must be valid noroff email"
+              required
+              class="w-full p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-400"
+            />
+            <input
+              id="registerName"
+              type="name"
+              placeholder="User name"
+              required
+              class="w-full p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-400"
+            />
+            <input
+              id="registerPassword"
+              type="password"
+              placeholder="Password. Must be atleast 8 digits"
+              required
+              class="w-full p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-400"
+            />
 
-          <!-- Middle Content -->
-          <div
-            class="flex flex-col items-center justify-between mt-6 space-y-6 md:flex-row md:space-y-0"
-          >
-            <button
-              class="w-full flex justify-center items-center p-4 space-x-4 font-sans font-bold text-white rounded-md shadow-lg px-9 bg-cyan-700 shadow-cyan-100 hover:bg-opacity-90 hover:shadow-lg border transition hover:-translate-y-0.5 duration-150"
+            <!-- Middle Content -->
+            <div
+              class="flex flex-col items-center justify-between mt-6 space-y-6 md:flex-row md:space-y-0"
             >
-              <span>Sign up</span>
-            </button>
-          </div>
+              <button
+                id="registerButton"
+                class="w-full flex justify-center items-center p-4 space-x-4 font-sans font-bold text-white rounded-md shadow-lg px-9 bg-cyan-700 shadow-cyan-100 hover:bg-opacity-90 hover:shadow-lg border transition hover:-translate-y-0.5 duration-150"
+              >
+                <span>Sign up</span>
+              </button>
+            </div>
+          </form>
 
           <!-- Border -->
           <div class="mt-12 border-b border-b-gray-300"></div>
@@ -70,13 +82,13 @@
             <button
               class="flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition duration-150 md:w-1/2"
             >
-              <img src="images/facebook.png" alt="" class="w-9" />
+              <img src="" alt="" class="w-9" />
               <span class="font-thin">Facebook</span>
             </button>
             <button
               class="flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition duration-150 md:w-1/2"
             >
-              <img src="images/google.png" alt="" class="w-9" />
+              <img src="" alt="" class="w-9" />
               <span class="font-thin">Google</span>
             </button>
           </div>

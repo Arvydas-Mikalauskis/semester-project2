@@ -1,26 +1,9 @@
-// Import any required libraries or modules
-
-const login_url = 'https://v2.api.noroff.dev/auth/login'
+import { login_url } from '../constants/urlEndpoints.js'
+import { toggleLoginModal } from '../utils/loginModal.js'
 
 const loginForm = document.getElementById('loginForm')
 const loginEmail = document.getElementById('loginEmail')
 const loginPassword = document.getElementById('loginPassword')
-
-function toggleLoginModal() {
-  const loginBtn = document.getElementById('loginBtn')
-  const closeModalBtn = document.getElementById('closeModal')
-  loginBtn.addEventListener('click', (e) => {
-    e.preventDefault()
-    const loginModal = document.getElementById('loginModal')
-    loginModal.classList.remove('hidden')
-  })
-
-  closeModalBtn.addEventListener('click', (e) => {
-    e.preventDefault()
-    const loginModal = document.getElementById('loginModal')
-    loginModal.classList.add('hidden')
-  })
-}
 
 toggleLoginModal()
 
@@ -50,7 +33,7 @@ async function loginUser(url, data) {
     console.log(loginJson)
     const accessToken = loginJson.data.accessToken
     localStorage.setItem('token', accessToken)
-    /* window.location.href = 'auction.html' */
+    window.location.href = 'auction.html'
   } else {
     console.log(loginJson)
     alert('Incorrect email or password')

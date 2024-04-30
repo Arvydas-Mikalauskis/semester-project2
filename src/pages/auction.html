@@ -14,7 +14,8 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../styles/output.css" />
-    <script src="../app/utils.js" defer></script>
+    <script src="../app/utils/mobileNAV.js" type="module" defer></script>
+    <script type="module" src="../app/API/getListings.js" defer></script>
     <title>Auction</title>
   </head>
   <body>
@@ -97,6 +98,9 @@
           class="w-full outline-none text-sm"
         />
       </div>
+    </section>
+    <section>
+      <div id="listingsContainer" class="grid grid-cols-4 gap-3 mt-16"></div>
     </section>
   </body>
 </html>

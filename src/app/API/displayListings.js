@@ -1,6 +1,8 @@
 export function displayListings(listings) {
   const listingsContainer = document.getElementById('listingsContainer')
 
+  listingsContainer.innerHTML = ''
+
   listings.forEach((listing) => {
     const cardContainer = document.createElement('div')
     cardContainer.className =
@@ -61,4 +63,12 @@ export function displayListings(listings) {
 
     listingsContainer.appendChild(cardContainer)
   })
+
+  if (listings.length === 0) {
+    const noResults = document.createElement('div')
+    noResults.className = 'col-span-4 flex justify-center items-center'
+    noResults.innerHTML =
+      '<p class="text-xl font-semibold text-gray-600">No listings found. Please try again.</p>'
+    listingsContainer.appendChild(noResults)
+  }
 }

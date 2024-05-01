@@ -33,7 +33,9 @@
         <div
           class="hidden items-center space-x-10 uppercase text-grayBlue md:flex"
         >
-          <a href="" class="tracking-widest hover:text-softRed">Home</a>
+          <a href="index.html" class="tracking-widest hover:text-softRed"
+            >Home</a
+          >
           <a href="#faq-accordion" class="tracking-widest hover:text-softRed"
             >FAQ</a
           >
@@ -73,6 +75,19 @@
         </div>
       </div>
     </nav>
+    <section>
+      <div class="flex justify-center items-center">
+        <img
+          class="w-1/2 mr-10"
+          src="../assets/images/online-shopping-concept.svg"
+          alt=""
+        />
+        <h3>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
+          officia?
+        </h3>
+      </div>
+    </section>
     <!-- Search/ filter products section -->
     <section>
       <div>
@@ -93,14 +108,24 @@
           ></path>
         </svg>
         <input
+          id="searchInput"
           type="search"
           placeholder="Search..."
           class="w-full outline-none text-sm"
         />
       </div>
     </section>
-    <section>
+    <section class="flex">
       <div id="listingsContainer" class="grid grid-cols-4 gap-3 mt-16"></div>
+      <div
+        id="profileCard"
+        class="flex flex-col items-center h-full p-20 mt-16 bg-white rounded-2xl shadow-2xl space-y-4 duration-200 hover:scale-105"
+      >
+        <img src="" alt="" id="profileAvatar" />
+        <h4 id="userName"></h4>
+        <p id="userCredits"></p>
+      </div>
     </section>
+    <script src="../app/API/getProfile.js" defer type="module"></script>
   </body>
 </html>

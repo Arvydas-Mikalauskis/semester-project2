@@ -1,5 +1,6 @@
 import { listingsUrl } from '../constants/urlEndpoints.js'
 import { displayListings } from './displayListings.js'
+import { searchAuctionListings } from './searchListings.js'
 
 let currentPage = 1
 const limit = 12
@@ -10,6 +11,7 @@ export async function getAuctionListings() {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   })
   const data = await response.json()

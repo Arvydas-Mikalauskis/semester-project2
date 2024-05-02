@@ -117,13 +117,81 @@
     </section>
     <section class="flex">
       <div id="listingsContainer" class="grid grid-cols-4 gap-3 mt-16"></div>
+
+      <!-- Profile card -->
       <div
         id="profileCard"
-        class="flex flex-col items-center h-full p-20 mt-16 bg-white rounded-2xl shadow-2xl space-y-4 duration-200 hover:scale-105"
+        class="flex flex-col justify-center items-center border-2 border-gray-100 gap-2 h-full mt-16 bg-gray-200 rounded-2xl shadow-2xl space-y-2 w-full"
       >
-        <img src="" alt="" id="profileAvatar" />
-        <h4 id="userName"></h4>
-        <p id="userCredits"></p>
+        <h4 id="userName" class="text-xl font-light text-gray-600 mt-10"></h4>
+        <div class="flex flex-col items-center gap-4">
+          <img
+            src=""
+            alt=""
+            id="profileAvatar"
+            class="rounded-full object-cover w-1/2"
+          />
+          <p id="userCredits" class="font-light text-gray-500"></p>
+          <button
+            id="editProfileBtn"
+            class="bg-softBlue font-light text-gray-200 border-2 border-blue-100 shadow-sm rounded-md p-2 mb-10 hover:text-white hover:scale-105 duration-200"
+          >
+            Edit Profile
+          </button>
+        </div>
+      </div>
+      <!-- Profile card modal -->
+      <!-- Modal -->
+      <div
+        id="editProfileModal"
+        class="fixed hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+        style="z-index: 300"
+      >
+        <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
+          <h2 class="text-2xl text-center mb-2 font-semibold">
+            Edit your profile info;
+          </h2>
+          <div class="text-center p-2">
+            <i class="fa-regular fa-xl fa-pen-to-square"></i>
+          </div>
+
+          <form id="updateProfileForm">
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Change your avatar
+            </p>
+            <input
+              id="changeAvatar"
+              type="url"
+              placeholder="Please insert publicly available url adress"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Add something about yourself
+            </p>
+            <textarea
+              class="mt-0 p-6 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+              name="changeBio"
+              id="changeBio"
+              cols="30"
+              rows="3"
+            ></textarea>
+
+            <button
+              id="updateProfileBtn"
+              type="submit"
+              class="mt-4 px-4 py-2 bg-softBlue bg-opacity-90 text-white rounded hover:bg-opacity-100 w-full"
+            >
+              Proceed
+            </button>
+            <button
+              type="button"
+              id="closeEditProfileModal"
+              class="mt-4 px-4 py-2 bg-softRed text-white rounded hover:bg-red-600 w-full"
+            >
+              Close
+            </button>
+          </form>
+        </div>
       </div>
     </section>
     <script src="../app/API/getProfile.js" defer type="module"></script>

@@ -3,7 +3,7 @@ export function displayProfileInfo(user) {
   const userCredits = document.getElementById('userCredits')
   const profileAvatar = document.getElementById('profileAvatar')
 
-  userName.innerHTML = `${user.data.name}`
-  userCredits.innerHTML = `Credits: ${user.data.credits}`
+  userName.innerText = `Profile: ${user.data.name}`
+  userCredits.innerText = `Your Credits: ${user.data.credits}`
   profileAvatar.src = user.data.avatar.url
 }

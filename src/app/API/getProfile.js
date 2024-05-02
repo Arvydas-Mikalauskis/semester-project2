@@ -1,6 +1,7 @@
 import { displayProfileInfo } from '../ui/displayProfile.js'
-const profileUrl = 'https://v2.api.noroff.dev/auction/profiles'
+import { profileUrl } from '../constants/urlEndpoints.js'
 import { API_KEY } from '../constants/urlEndpoints.js'
+import { updateProfile } from './updateProfile.js'
 
 export async function getProfile() {
   const response = await fetch(profileUrl, {

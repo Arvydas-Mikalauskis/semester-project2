@@ -117,29 +117,117 @@
     </section>
     <section class="flex">
       <div id="listingsContainer" class="grid grid-cols-4 gap-3 mt-16"></div>
-
-      <!-- Profile card -->
-      <div
-        id="profileCard"
-        class="flex flex-col justify-center items-center border-2 border-gray-100 gap-2 h-full mt-16 bg-gray-200 rounded-2xl shadow-2xl space-y-2 w-full"
-      >
-        <h4 id="userName" class="text-xl font-light text-gray-600 mt-10"></h4>
-        <div class="flex flex-col items-center gap-4">
-          <img
-            src=""
-            alt=""
-            id="profileAvatar"
-            class="rounded-full object-cover w-1/2"
-          />
-          <p id="userCredits" class="font-light text-gray-500"></p>
+      <!-- Side section / Profile, post bid -->
+      <div class="flex flex-col mt-16 gap-2 mr-2">
+        <!-- Post bid section -->
+        <div
+          class="flex justify-center items-center border-2 border-gray-100 gap-2 bg-green-400 rounded-2xl shadow-xl space-y-2"
+        >
           <button
-            id="editProfileBtn"
-            class="bg-softBlue font-light text-gray-200 border-2 border-blue-100 shadow-sm rounded-md p-2 mb-10 hover:text-white hover:scale-105 duration-200"
+            id="openCreateListingModal"
+            class="text-gray-100 p-4 hover:scale-105 duration-200"
           >
-            Edit Profile
+            Create your own new listing
+            <i class="fa-solid fa-landmark"></i>
           </button>
         </div>
+        <!-- Profile card -->
+        <div
+          id="profileCard"
+          class="flex flex-col justify-center items-center border-2 border-gray-100 gap-2 bg-gray-200 rounded-2xl shadow-2xl space-y-2"
+        >
+          <h4 id="userName" class="text-xl font-light text-gray-600 mt-10"></h4>
+          <div class="flex flex-col items-center gap-4">
+            <img
+              src=""
+              alt=""
+              id="profileAvatar"
+              class="rounded-full object-cover h-32 w-full border-2 border-softBlue shadow-md"
+            />
+            <p id="profileBio" class="font-light text-grayBlue"></p>
+            <p id="userCredits" class="font-light text-gray-500"></p>
+            <button
+              id="editProfileBtn"
+              class="bg-softBlue font-light text-gray-200 border-2 border-blue-100 shadow-sm rounded-md p-2 mb-10 hover:text-white hover:scale-105 duration-200"
+            >
+              Edit Profile
+            </button>
+          </div>
+        </div>
       </div>
+
+      <!-- Post a listing modal -->
+      <!-- Modal -->
+      <div
+        id="postBidModal"
+        class="fixed hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+        style="z-index: 300"
+      >
+        <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
+          <h2 class="text-2xl text-center mb-2 font-semibold">
+            Create new listing
+          </h2>
+          <div class="text-center p-2">
+            <i class="fa-solid fa-xl fa-landmark"></i>
+          </div>
+
+          <form id="createNewListing">
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Listings title:
+            </p>
+            <input
+              id="listingTitle"
+              type="text"
+              placeholder="Ex: Used mountain bike"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Add image of your listing:
+            </p>
+            <input
+              id="listingImage"
+              type="url"
+              placeholder="Must be publicly available url adress"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Short description:
+            </p>
+            <textarea
+              class="mt-0 p-6 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+              name="listingDescription"
+              id="listingDescription"
+              placeholder="Ex: Used mountain bike, good condition, 21 gears, 29 inch wheels, hydraulic disc brakes, etc."
+              cols="30"
+              rows="3"
+            ></textarea>
+            <p class="align-middle mt-4 italic text-grayBlue">
+              End date of the auction:
+            </p>
+            <input
+              id="endsAt"
+              type="date"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+
+            <button
+              id="postBid-btn"
+              type="submit"
+              class="mt-4 px-4 py-2 bg-softBlue bg-opacity-90 text-white rounded hover:bg-opacity-100 w-full"
+            >
+              Proceed
+            </button>
+            <button
+              type="button"
+              id="closeNewlistingModal"
+              class="mt-4 px-4 py-2 bg-softRed text-white rounded hover:bg-red-600 w-full"
+            >
+              Close
+            </button>
+          </form>
+        </div>
+      </div>
+
       <!-- Profile card modal -->
       <!-- Modal -->
       <div

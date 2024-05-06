@@ -27,7 +27,7 @@ export function displayListings(listings) {
 
     const listingDescription = document.createElement('div')
     listingDescription.className =
-      'text-md font-light text-gray-400 h-24 overflow-hidden'
+      'text-md font-light text-gray-400 h-16 overflow-hidden'
     listingDescription.innerHTML = listing.description
       ? `<p>${listing.description}</p>`
       : `<p>Description not provided</p>`

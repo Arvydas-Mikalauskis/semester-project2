@@ -281,6 +281,55 @@
           </form>
         </div>
       </div>
+
+      <!-- Profile card modal -->
+      <!-- Modal -->
+      <div
+        id="placeBid-modal"
+        class="fixed hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+        style="z-index: 300"
+      >
+        <div class="bg-white p-8 rounded-xl shadow-md max-w-xl relative">
+          <i
+            id="close-bidModal"
+            class="fa-regular fa-xl fa-circle-xmark absolute top-10 right-10"
+          ></i>
+
+          <div class="flex justify-evenly mt-4 px-6">
+            <div class="flex flex-col items-center">
+              <img id="productImg" src="" alt="Product image" />
+            </div>
+            <div class="flex flex-col items-center gap-3">
+              <h4 id="listing-title" class="text-2xl font-medium text-center">
+                Title
+              </h4>
+              <p id="listing-descr" class="text-center">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut,
+                repudiandae?
+              </p>
+              <p id="currentBid" class="text-center mt-4">Current bid: $</p>
+              <p id="bid-endsAt" class="text-center">Ends at:</p>
+              <input
+                id="placeBidInput"
+                type="number"
+                placeholder="Place a bid..."
+                class="mt-0 p-2 border rounded shadow-md focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+              />
+              <div class="group">
+                <button
+                  class="w-full transition-all duration-150 bg-blue-700 text-white border-b-8 border-b-blue-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-blue-700 group-hover:border-t-blue-700 group-hover:shadow-lg"
+                >
+                  <div
+                    class="px-8 py-4 duration-150 bg-blue-500 rounded-lg group-hover:bg-blue-700"
+                  >
+                    Place a bid
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <script src="../app/API/getProfile.js" defer type="module"></script>
   </body>

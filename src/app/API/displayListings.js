@@ -1,3 +1,5 @@
+import { getSingleListing } from './getSingleListing.js'
+
 export function displayListings(listings) {
   const listingsContainer = document.getElementById('listingsContainer')
 
@@ -58,8 +60,10 @@ export function displayListings(listings) {
     const bidButton = document.createElement('button')
     bidButton.className =
       'bg-softBlue text-white font-semibold w-full h-10 rounded-lg shadow-md hover:bg-blue-500 transition duration-200'
-    bidButton.innerHTML = 'Bid'
+    bidButton.innerText = 'Place a bid'
+    bidButton.dataset.itemId = listing.id
     cardContainer.appendChild(bidButton)
+    bidButton.addEventListener('click', getListingID)
 
     listingsContainer.appendChild(cardContainer)
   })
@@ -71,4 +75,13 @@ export function displayListings(listings) {
       '<p class="text-xl font-semibold text-gray-600">No listings found. Please try again.</p>'
     listingsContainer.appendChild(noResults)
   }
+}
+
+function getListingID(event) {
+  const clickedButton = event.target
+  const itemId = clickedButton.dataset.itemId
+
+  console.log(itemId)
+
+  getSingleListing(itemId)
 }

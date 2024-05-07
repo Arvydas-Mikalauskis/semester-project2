@@ -20,9 +20,6 @@ export async function getAuctionListings() {
   const data = await response.json()
   console.log(data)
   displayListings(data.data)
-  data.data.forEach((listing) => {
-    getSingleListing(listing.id)
-  })
 }
 
 getAuctionListings()

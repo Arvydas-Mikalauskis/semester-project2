@@ -1,4 +1,5 @@
 import { getSingleListing } from './getSingleListing.js'
+import { placeBid } from './placeBid.js'
 
 export function displayListings(listings) {
   const listingsContainer = document.getElementById('listingsContainer')
@@ -64,6 +65,7 @@ export function displayListings(listings) {
     bidButton.dataset.itemId = listing.id
     cardContainer.appendChild(bidButton)
     bidButton.addEventListener('click', getListingID)
+    bidButton.addEventListener('click', bidOnListing)
 
     listingsContainer.appendChild(cardContainer)
   })
@@ -84,4 +86,25 @@ function getListingID(event) {
   console.log(itemId)
 
   getSingleListing(itemId)
+}
+
+function bidOnListing(event) {
+  const clickedButton = event.target
+  const itemId = clickedButton.dataset.itemId
+
+  const sendBidButton = document.getElementById('sendBid-btn')
+
+  sendBidButton.addEventListener('click', () => {
+    const amount = parseFloat(document.getElementById('placeBidInput').value)
+    if (amount === '' || isNaN(amount)) {
+      alert('Please enter a valid amount')
+      return
+    } else {
+      placeBid(itemId, amount)
+      setTimeout(() => {
+        alert('Bid placed successfully')
+        window.location.reload()
+      }, 1500)
+    }
+  })
 }

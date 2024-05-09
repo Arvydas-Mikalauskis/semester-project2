@@ -32,6 +32,11 @@ export async function getSingleListing(id) {
   ).toLocaleTimeString()
 
   document.getElementById('placeBid-modal').classList.remove('hidden')
+  document.getElementById('placeBid-modal').classList.add('flex')
+
+  document.getElementById('close-bidModal').addEventListener('click', () => {
+    document.getElementById('placeBid-modal').classList.add('hidden')
+  })
 
   console.log(data)
 }

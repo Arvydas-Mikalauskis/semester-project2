@@ -9,6 +9,12 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/558153e5d0.js"
       crossorigin="anonymous"
@@ -16,6 +22,7 @@
     <link rel="stylesheet" href="../styles/output.css" />
     <script src="../app/utils/mobileNAV.js" defer type="module"></script>
     <script src="../app/authentication/login.js" defer type="module"></script>
+
     <title>Home</title>
   </head>
   <body class="overflow-x-hidden">
@@ -39,7 +46,9 @@
           <a href="#faq-accordion" class="tracking-widest hover:text-softRed"
             >FAQ</a
           >
-          <a href="" class="tracking-widest hover:text-softRed">Contact</a>
+          <a href="#footer" class="tracking-widest hover:text-softRed"
+            >Contact</a
+          >
           <a
             id="loginBtn"
             href=""
@@ -139,15 +148,17 @@
       >
         <div class="flex flex-col space-y-10 lg:mt-16 lg:w-1/2">
           <h1
-            class="text-3xl font-semibold text-center lg:text-6xl lg:text-left"
+            class="text-3xl font-semibold text-center lg:text-4xl italic tracking-widest text-red-500 lg:text-left"
           >
-            An online auction
+            Welcome to GlobalBid. Your gateway to worldwide auctions!
           </h1>
           <p
-            class="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0"
+            class="max-w-lg mx-auto text-lg text-center text-gray-500 font-openSans lg:text-xl lg:text-left lg:mt-0 lg:mx-0"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam,
-            deleniti!
+            Embark on an international adventure with GlobalBid, where the
+            thrill of the auction transcends borders. Connect with a diverse
+            global community eager to showcase and discover items from every
+            corner of the world. Dive into the global bidding experience now!
           </p>
         </div>
         <div class="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
@@ -163,19 +174,21 @@
 
     <!-- About section -->
     <section id="about">
-      <div class="container mx-auto mt-16 px-6 md:mx-0">
+      <div class="container mx-auto mt-32 px-6 md:mx-0">
         <h2 class="mb-6 text-4xl font-semibold text-center">About:</h2>
-        <p class="max-w-md mx-auto text-center text-grayBlue">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae
-          quibusdam magnam sit fuga amet facere?Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Doloremque, sunt!
+        <p class="max-w-lg mx-auto text-center font-openSans text-grayBlue">
+          GlobalBid was established in 2024 with a vision to create a borderless
+          auction space. Our platform celebrates the diversity of items and
+          cultures, bringing together sellers and buyers from across the globe.
+          We’re not just an auction site; we’re a worldwide community sharing a
+          passion for the unique and the extraordinary.
         </p>
       </div>
     </section>
 
     <!--    Tabs and panels -->
     <section id="tabs">
-      <div class="container relative mx-auto my-6 mb-32 mt-12 px-6">
+      <div class="container relative mx-auto my-6 mt-12 px-6">
         <div class="bg-tabs"></div>
         <div
           class="flex flex-col justify-center max-w-xl mx-auto mb-6 border-b md:space-x-10 md:flex-row"
@@ -217,7 +230,7 @@
             </div>
           </div>
         </div>
-        <section id="panels" class="container mx-auto">
+        <section id="panels" class="container h-screen mx-auto">
           <!-- panel nr 1 -->
           <div
             class="flex flex-col py-5 md:flex-row md:space-x-7 panel panel-1"
@@ -234,11 +247,16 @@
               <h3
                 class="mt-32 text-2xl font-semibold text-center md:mt-0 md:text-left md:pt-20"
               >
-                Lorem ipsum
+                Easy: Join & Earn Credits
               </h3>
-              <p class="max-w-md text-center text-grayBlue md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-                dolore.
+              <p class="max-w-lg text-center text-grayBlue md:text-left">
+                Step 1: Sign Up and Start with a Bonus. Joining GlobalBid is a
+                breeze. Sign up today and we’ll kickstart your auction journey
+                with
+                <span class="font-semibold">1,000 free credits!</span> Use these
+                credits to bid on your favorite items or save them up for that
+                special find. As a member, you’ll have the power to sell and
+                turn your treasures into credits for future bids.
               </p>
             </div>
           </div>
@@ -258,11 +276,14 @@
               <h3
                 class="mt-32 text-2xl font-semibold text-center md:mt-0 md:text-left md:pt-20"
               >
-                Lorem ipsum
+                Fast: Bid & Win
               </h3>
-              <p class="max-w-md text-center text-grayBlue md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-                dolore.
+              <p class="max-w-lg text-center text-grayBlue md:text-left">
+                Step 2: Quick Bidding Process Ready to bid? With GlobalBid, it’s
+                rapid and straightforward. Browse through listings, place your
+                bid with a single click, and watch the auction unfold. Our
+                real-time updates mean you’ll never miss a beat. Win auctions
+                and make those coveted items yours in no time!
               </p>
             </div>
           </div>
@@ -274,7 +295,7 @@
               <img
                 src="../assets/images/delivery.svg"
                 alt=""
-                class="relative z-10"
+                class="relative z-10 h-3/4"
               />
             </div>
             <!-- Panel content -->
@@ -282,208 +303,52 @@
               <h3
                 class="mt-32 text-2xl font-semibold text-center md:mt-0 md:text-left md:pt-20"
               >
-                Lorem ipsum
+                Simple: Search & Participate
               </h3>
-              <p class="max-w-md text-center text-grayBlue md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque,
-                dolore.
+              <p class="max-w-lg text-center text-grayBlue md:text-left">
+                Step 3: Easy Access to Auctions Even if you’re not ready to
+                join, you can still be part of the GlobalBid community. Search
+                through our extensive listings to see what’s up for auction. And
+                when you’re ready to throw your hat in the ring, a simple
+                registration process unlocks the full bidding experience. It’s
+                that simple!
               </p>
             </div>
           </div>
         </section>
       </div>
     </section>
-    <!-- Latest auctions  -->
+    <!-- Invite to register section  -->
 
     <section>
-      <div class="mb-8">
-        <h2 class="text-3xl font-semibold mb-2 pl-12">Latest auctions</h2>
-        <p class="w-1/2 border-b-4 border-softRed"></p>
-      </div>
-      <div class="flex mb-8">
-        <!-- Card container -->
-        <div
-          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
-        >
-          <!-- Img container -->
-          <div>
-            <img
-              class="w-40 mx-auto duration-200 hover:scale-105"
-              src="../assets/images/headphone.png"
-              alt=""
-            />
-          </div>
-          <!-- Content container -->
-          <div class="space-y-2">
-            <h4 class="max-w-sm text-xl font-medium">
-              Razer Kraken kitty Edt Gaming headset
-            </h4>
-            <p class="text-sm font-light text-gray-400">
-              This offer is valid until April 30th or as long as stock lasts!
-            </p>
-          </div>
-
-          <div class="flex items-center space-x-3 group">
-            <div
-              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
-            ></div>
-            <div class="text-sm">50+ pcs. in stock</div>
-          </div>
-          <div class="flex flex-row justify-around items-center">
-            <div class="text-softBlue font-medium">
-              Current bid: <span class="text-gray-700">$499</span>
-            </div>
-            <button
-              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
+      <div
+        class="container -mt-20 flex flex-col items-center justify-center gap-12 mb-24"
+      >
+        <div>
+          <img src="../assets/images/undraw_register.svg" alt="" class="h-80" />
+        </div>
+        <div>
+          <h3 class="text-3xl font-semibold text-center mb-2">Register now</h3>
+          <p class="text-grayBlue font-openSans">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
+            cumque illo soluta.
+          </p>
+          <div class="flex justify-center items-center mt-4">
+            <a
+              href="signUp.html"
+              class="text-white bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white mx-auto"
             >
-              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
-              bid
-            </button>
-          </div>
-          <div class="font-medium text-sm p-2 text-center">
-            The winner of the auction will be announced in: 24:00
+              Register Now
+            </a>
           </div>
         </div>
-        <div
-          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
-        >
-          <!-- Img container -->
-          <div>
-            <img
-              class="w-40 mx-auto duration-200 hover:scale-105"
-              src="../assets/images/headphone.png"
-              alt=""
-            />
-          </div>
-          <!-- Content container -->
-          <div class="space-y-2">
-            <h4 class="max-w-sm text-xl font-medium">
-              Razer Kraken kitty Edt Gaming headset
-            </h4>
-            <p class="text-sm font-light text-gray-400">
-              This offer is valid until April 30th or as long as stock lasts!
-            </p>
-          </div>
-
-          <div class="flex items-center space-x-3 group">
-            <div
-              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
-            ></div>
-            <div class="text-sm">50+ pcs. in stock</div>
-          </div>
-          <div class="flex flex-row justify-around items-center">
-            <div class="text-softBlue font-medium">
-              Current bid: <span class="text-gray-700">$499</span>
-            </div>
-            <button
-              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
-            >
-              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
-              bid
-            </button>
-          </div>
-          <div class="font-medium text-sm p-2 text-center">
-            The winner of the auction will be announced in: 24:00
-          </div>
-        </div>
-        <div
-          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
-        >
-          <!-- Img container -->
-          <div>
-            <img
-              class="w-40 mx-auto duration-200 hover:scale-105"
-              src="../assets/images/headphone.png"
-              alt=""
-            />
-          </div>
-          <!-- Content container -->
-          <div class="space-y-2">
-            <h4 class="max-w-sm text-xl font-medium">
-              Razer Kraken kitty Edt Gaming headset
-            </h4>
-            <p class="text-sm font-light text-gray-400">
-              This offer is valid until April 30th or as long as stock lasts!
-            </p>
-          </div>
-
-          <div class="flex items-center space-x-3 group">
-            <div
-              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
-            ></div>
-            <div class="text-sm">50+ pcs. in stock</div>
-          </div>
-          <div class="flex flex-row justify-around items-center">
-            <div class="text-softBlue font-medium">
-              Current bid: <span class="text-gray-700">$499</span>
-            </div>
-            <button
-              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
-            >
-              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
-              bid
-            </button>
-          </div>
-          <div class="font-medium text-sm p-2 text-center">
-            The winner of the auction will be announced in: 24:00
-          </div>
-        </div>
-        <div
-          class="flex flex-col p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4"
-        >
-          <!-- Img container -->
-          <div>
-            <img
-              class="w-40 mx-auto duration-200 hover:scale-105"
-              src="../assets/images/headphone.png"
-              alt=""
-            />
-          </div>
-          <!-- Content container -->
-          <div class="space-y-2">
-            <h4 class="max-w-sm text-xl font-medium">
-              Razer Kraken kitty Edt Gaming headset
-            </h4>
-            <p class="text-sm font-light text-gray-400">
-              This offer is valid until April 30th or as long as stock lasts!
-            </p>
-          </div>
-
-          <div class="flex items-center space-x-3 group">
-            <div
-              class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
-            ></div>
-            <div class="text-sm">50+ pcs. in stock</div>
-          </div>
-          <div class="flex flex-row justify-around items-center">
-            <div class="text-softBlue font-medium">
-              Current bid: <span class="text-gray-700">$499</span>
-            </div>
-            <button
-              class="bg-softRed border-2 border-softRed rounded-lg shadow-md p-2 text-white hover:scale-105"
-            >
-              <i class="fa-solid fa-scale-balanced text-gray-300"></i> Place a
-              bid
-            </button>
-          </div>
-          <div class="font-medium text-sm p-2 text-center">
-            The winner of the auction will be announced in: 24:00
-          </div>
-        </div>
-      </div>
-      <div class="flex justify-center mb-24">
-        <button
-          class="bg-softBlue text-white border-2 shadow-md rounded-lg px-16 py-4 hover:scale-105"
-        >
-          Show more
-        </button>
       </div>
     </section>
 
     <!-- FAQ accordion -->
     <section id="faq">
-      <div class="container mx-auto">
-        <h2 class="mb-6 text-3xl font-semibold text-center md:text-4xl">
+      <div class="container mx-auto mt-48">
+        <h2 class="mb-6 text-2xl font-semibold text-center md:text-3xl">
           Frequently Asked Questions
         </h2>
         <p class="max-w-lg mx-auto px-6 text-center text-grayBlue">
@@ -513,10 +378,12 @@
             <div
               class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
             >
-              <p class="py-2 text-justify text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat ipsum molestias necessitatibus eos eaque quisquam.
-                Dolores laboriosam error aspernatur nobis?
+              <p class="py-2 text-justify font-openSans italic text-gray-500">
+                An auction is a public sale where goods or services are sold to
+                the highest bidder. At GlobalBid, we host an online platform
+                where users can list items for auction and others can place bids
+                to purchase them. It’s a dynamic marketplace where the price is
+                determined by the community’s demand.
               </p>
             </div>
           </div>
@@ -540,10 +407,24 @@
             <div
               class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
             >
-              <p class="py-2 text-justify text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat ipsum molestias necessitatibus eos eaque quisquam.
-                Dolores laboriosam error aspernatur nobis?
+              <p class="py-2 text-justify italic font-openSans text-gray-500">
+                Our auction process is simple:
+                <br />
+                <span class="font-semibold not-italic">List an Item:</span> As a
+                registered user, you can list an item for auction with a
+                starting bid.
+                <br />
+                <span class="font-semibold not-italic">Place bids:</span>
+                Interested buyers can place bids on items they desire.
+                <br />
+                <span class="font-semibold not-italic"
+                  >Winning the auction:</span
+                >
+                When the auction time ends, the highest bid wins the item.
+                <br />
+                <span class="font-semibold not-italic">Transaction:</span> The
+                winner pays for the item using credits, and the seller receives
+                credits in return.
               </p>
             </div>
           </div>
@@ -567,10 +448,15 @@
             <div
               class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
             >
-              <p class="py-2 text-justify text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat ipsum molestias necessitatibus eos eaque quisquam.
-                Dolores laboriosam error aspernatur nobis?
+              <p class="py-2 text-justify italic font-openSans text-gray-500">
+                Credits are the currency of GlobalBid. Here’s how you can get
+                them:
+                <br />
+                <span class="font-semibold not-italic">Sign-Up Bonus:</span> Get
+                1,000 credits just for signing up.
+                <br />
+                <span class="font-semibold not-italic">Sell Items:</span> Earn
+                credits by listing and selling your items.
               </p>
             </div>
           </div>
@@ -594,10 +480,12 @@
             <div
               class="overflow-hidden transtion duration-500 group-focus:max-h-screen max-h-0 ease"
             >
-              <p class="py-2 text-justify text-gray-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat ipsum molestias necessitatibus eos eaque quisquam.
-                Dolores laboriosam error aspernatur nobis?
+              <p class="py-2 text-justify italic font-openSans text-gray-500">
+                Once you win an auction, the seller will provide delivery
+                options based on the item’s location and size. GlobalBid
+                facilitates the connection between buyer and seller to ensure a
+                smooth transaction and delivery process. For international
+                shipping, additional fees and customs regulations may apply.
               </p>
             </div>
           </div>
@@ -607,16 +495,16 @@
 
     <!-- Footer -->
     <footer id="footer" class="bg-veryDarkBlue">
-      <div class="mx-w-lg mx-auto py-24">
+      <div class="mx-w-lg mx-auto py-12">
         <p
           class="mb-6 text-lg -tracking-widest text-center text-white uppercase"
         >
-          10,000 Members already Joined us
+          +10,000 Members already Joined us
         </p>
         <h2
           class="px-3 mb-6 text-3xl font-semibold text-center text-white md:text-4xl"
         >
-          Stay up-to-date with what we're doing
+          Stay up-to-date with the latest offers
         </h2>
         <form
           action=""
@@ -638,6 +526,28 @@
             />
           </div>
         </form>
+        <h4
+          class="px-3 mb-0 mt-8 text-xl font-semibold text-center uppercase underline decoration-softRed underline-offset-4 text-white md:text-lg"
+        >
+          Contact Us on:
+        </h4>
+        <div class="flex gap-12 justify-center text-white mt-2">
+          <a href="https://www.facebook.com/"
+            ><i
+              class="fa-brands fa-2xl fa-facebook hover:text-softRed duration-200"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/"
+            ><i
+              class="fa-brands fa-2xl fa-instagram hover:text-softRed duration-200"
+            ></i
+          ></a>
+          <a href="#112"
+            ><i
+              class="fa-solid fa-2xl fa-phone hover:text-softRed duration-200"
+            ></i
+          ></a>
+        </div>
       </div>
     </footer>
   </body>

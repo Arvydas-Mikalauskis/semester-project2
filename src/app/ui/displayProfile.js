@@ -4,7 +4,7 @@ export function displayProfileInfo(user) {
   const profileAvatar = document.getElementById('profileAvatar')
   const profileBio = document.getElementById('profileBio')
 
-  userName.innerText = `Profile: ${user.data.name}`
+  userName.innerText = `${user.data.name}`
   profileBio.innerText = `Bio: ${user.data.bio}`
 
   userCredits.innerText = `Your Credits: ${user.data.credits}`

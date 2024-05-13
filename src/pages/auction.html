@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,22 +76,86 @@
       </div>
     </nav>
     <section>
-      <div class="flex justify-center items-center">
-        <img
-          class="w-1/2 mr-10"
-          src="../assets/images/online-shopping-concept.svg"
-          alt=""
-        />
-        <h3>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis,
-          officia?
-        </h3>
+      <div
+        class="container flex flex-col items-center mx-auto p-6 lg:flex-row lg:mb-2"
+      >
+        <div class="w-full lg:w-1/2 md:w-3/4">
+          <img
+            class=""
+            src="../assets/images/online-shopping-concept.svg"
+            alt=""
+          />
+        </div>
+        <div class="lg:w-1/2">
+          <h4
+            class="text-xl text-grayBlue text-center lg:text-2xl tracking-widest lg:text-right"
+          >
+            Our online auction brings together a diverse array of items listed
+            by our registered users. Dive into a seamless bidding experience and
+            claim your next prized possession or hidden gem.
+          </h4>
+        </div>
+      </div>
+    </section>
+    <!-- Profile display, add post button -->
+    <section>
+      <h3 class="text-2xl font-semibold text-center mt-12">Welcome back</h3>
+      <div class="flex flex-col gap-4 items-center mt-2">
+        <!-- Profile card -->
+        <div
+          id="profileCard"
+          class="flex items-center gap-2 border-2 px-4 border-gray-100 bg-gray-200 rounded-2xl shadow-2xl space-y-2"
+        >
+          <div>
+            <img
+              id="profileAvatar"
+              class="object-cover w-24 h-24 rounded-lg shadow-lg"
+              src=""
+              alt=""
+            />
+            <button
+              id="editProfileBtn"
+              class="bg-softBlue font-light text-gray-200 border-2 border-blue-100 shadow-sm rounded-md p-2 hover:text-white hover:scale-105 duration-200"
+            >
+              Edit Profile
+            </button>
+          </div>
+          <div class="flex flex-col px-8 py-2">
+            <h4
+              id="userName"
+              class="text-xl font-openSans text-center text-grayBlue"
+            ></h4>
+            <p
+              id="profileBio"
+              class="font-light text-center text-grayBlue font-openSans pt-2"
+            ></p>
+            <p
+              id="userCredits"
+              class="font-light text-softBlue font-openSans text-center"
+            ></p>
+
+            <!-- Post bid  -->
+            <div
+              class="flex justify-center items-center border-2 border-gray-100 gap-2 bg-green-400 rounded-2xl shadow-xl space-y-2"
+            >
+              <button
+                id="openCreateListingModal"
+                class="text-gray-100 p-4 hover:scale-105 duration-200"
+              >
+                Create your own new listing
+                <i class="fa-solid fa-landmark"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <!-- Search/ filter products section -->
     <section>
       <div>
-        <h1 class="text-3xl font-semibold text-center mt-8">Active Auctions</h1>
+        <h1 class="text-3xl text-softRed font-semibold text-center mt-14">
+          Active Auctions
+        </h1>
       </div>
       <!-- Search bar -->
       <div
@@ -115,45 +179,12 @@
         />
       </div>
     </section>
-    <section class="flex">
-      <div id="listingsContainer" class="grid grid-cols-4 gap-3 mt-16"></div>
-      <!-- Side section / Profile, post bid -->
-      <div class="flex flex-col mt-16 gap-2 mr-2">
-        <!-- Post bid section -->
-        <div
-          class="flex justify-center items-center border-2 border-gray-100 gap-2 bg-green-400 rounded-2xl shadow-xl space-y-2"
-        >
-          <button
-            id="openCreateListingModal"
-            class="text-gray-100 p-4 hover:scale-105 duration-200"
-          >
-            Create your own new listing
-            <i class="fa-solid fa-landmark"></i>
-          </button>
-        </div>
-        <!-- Profile card -->
-        <div
-          id="profileCard"
-          class="flex flex-col justify-center items-center border-2 border-gray-100 gap-2 bg-gray-200 rounded-2xl shadow-2xl space-y-2"
-        >
-          <h4 id="userName" class="text-xl font-light text-gray-600 mt-10"></h4>
-          <div class="flex flex-col items-center gap-4">
-            <img
-              src=""
-              alt=""
-              id="profileAvatar"
-              class="rounded-full object-cover h-32 w-full border-2 border-softBlue shadow-md"
-            />
-            <p id="profileBio" class="font-light text-grayBlue"></p>
-            <p id="userCredits" class="font-light text-gray-500"></p>
-            <button
-              id="editProfileBtn"
-              class="bg-softBlue font-light text-gray-200 border-2 border-blue-100 shadow-sm rounded-md p-2 mb-10 hover:text-white hover:scale-105 duration-200"
-            >
-              Edit Profile
-            </button>
-          </div>
-        </div>
+
+    <section>
+      <div
+        id="listingsContainer"
+        class="container grid grid-cols-1 mx-auto gap-6 mt-16 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2"
+      >     
       </div>
 
       <!-- Post a listing modal -->
@@ -289,26 +320,42 @@
         class="fixed hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
         style="z-index: 300"
       >
-        <div class="bg-white p-8 rounded-xl shadow-md max-w-xl relative">
+        <div
+          class="container bg-white p-8 rounded-xl shadow-md max-w-xl relative"
+        >
           <i
             id="close-bidModal"
-            class="fa-regular fa-xl fa-circle-xmark absolute top-10 right-10"
+            class="fa-regular fa-xl fa-circle-xmark absolute top-10 right-10 hover:scale-105 duration-200 cursor-pointer hover:text-softRed"
           ></i>
 
           <div class="flex justify-evenly mt-4 px-6">
-            <div class="flex flex-col items-center">
-              <img id="productImg" src="" alt="Product image" />
+            <div class="flex flex-col items-center w-1/2">
+              <img
+                class="object-cover w-60 h-60 rounded-lg shadow-lg mr-8"
+                id="productImg"
+                src=""
+                alt="Product image"
+              />
             </div>
-            <div class="flex flex-col items-center gap-3">
-              <h4 id="listing-title" class="text-2xl font-medium text-center">
+            <div class="flex flex-col items-center gap-3 w-1/2">
+              <h4
+                id="listing-title"
+                class="text-2xl font-medium text-center uppercase"
+              >
                 Title
               </h4>
-              <p id="listing-descr" class="text-center">
+              <p id="listing-descr" class="text-center text-lg text-grayBlue">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut,
                 repudiandae?
               </p>
-              <p id="currentBid" class="text-center mt-4">Current bid: $</p>
-              <p id="bid-endsAt" class="text-center">Ends at:</p>
+              <p
+                id="currentBid"
+                class="text-center mt-4 text-sm font-medium text-green-500"
+              ></p>
+              <p
+                id="bid-endsAt"
+                class="text-center text-sm text-softRed italic"
+              ></p>
               <input
                 id="placeBidInput"
                 type="number"
@@ -332,6 +379,96 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="flex w-full items-center justify-center mt-16 gap-20 mb-20">
+        <button
+          id="prevPage"
+          class="bg-softRed w-40 text-white p-2 rounded-lg hover:scale-105 duration-200 hover:bg-red-500"
+        >
+          <i class="fa-solid fa-arrow-left"></i> Previous
+        </button>
+        <button
+          id="nextPage"
+          class="bg-softRed w-40 text-white p-2 rounded-lg hover:scale-105 duration-200 hover:bg-red-500"
+        >
+          <i class="fa-solid fa-arrow-right"></i> Next
+        </button>
+      </div>      
+    </section> 
+    <!-- Testimonials -->
+    <section>
+      <div class="flex flex-col text-center items-center justify-center gap-6">
+        <div>
+          <h4 class="text-2xl font-semibold mb-2 text-grayBlue">Read trusted reviews from our customers;</h4>
+          <p class="text-sm font-openSans tracking-widest text-grayBlue">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste harum voluptatum dolore?</p>
+        </div>
+        <div id="testimonials" class="bg-white  container sm:w-fit lg:w-2/3 p-12 rounded-2xl shadow-2xl border-2 border-grayBlue border-opacity-40">         
+        </div>
+        <div class="flex gap-8">
+          <button id="nextTestimonial"><i class="fa-solid fa-2xl  text-softRed hover:text-red-500 hover:scale-105 duration-200 fa-circle-arrow-left"></i></button>
+          <button id="prevTestimonial"><i class="fa-solid fa-2xl text-softRed hover:text-red-500 hover:scale-105 duration-200 fa-circle-arrow-right"></i></button>
+        </div>
+        
+      </div>
+      
+    </section>   
+    <!-- Footer -->
+    <footer id="footer" class="bg-veryDarkBlue mt-24">
+      <div class="mx-w-lg mx-auto py-12">
+        <p
+          class="mb-6 text-lg -tracking-widest text-center text-white uppercase"
+        >
+          +10,000 Members already Joined us
+        </p>
+        <h2 class="px-3 mb-6 text-3xl font-semibold text-center text-white">
+          Stay up-to-date with the latest offers
+        </h2>
+        <form
+          action=""
+          class="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0"
+        >
+          <div
+            class="flex flex-col justify-between items-center mx-auto md:flex-row md:mx-0"
+          >
+            <input
+              type="text"
+              placeholder="Enter your email adress"
+              class="flex-1 px-6 pt-3 pb-2 mb-4 rounded-lg border-1 border-white focus-within:outline-none md:mr-3 md:mb-0"
+            />
+
+            <input
+              type="submit"
+              value="Contact Us"
+              class="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-softRed hover:opacity-90"
+            />
+          </div>
+        </form>
+        <h4
+          class="px-3 mb-0 mt-8 text-xl font-semibold text-center uppercase underline decoration-softRed underline-offset-4 text-white md:text-lg"
+        >
+          Contact Us on:
+        </h4>
+        <div class="flex gap-12 justify-center text-white mt-2">
+          <a href="https://www.facebook.com/"
+            ><i
+              class="fa-brands fa-2xl fa-facebook hover:text-softRed duration-200"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/"
+            ><i
+              class="fa-brands fa-2xl fa-instagram hover:text-softRed duration-200"
+            ></i
+          ></a>
+          <a href="#112"
+            ><i
+              class="fa-solid fa-2xl fa-phone hover:text-softRed duration-200"
+            ></i
+          ></a>
+        </div>
+      </div>
+    </footer>  
+
     <script src="../app/API/getProfile.js" defer type="module"></script>
+    <script type="module" src="../app/ui/testimonialsCarousel.js"></script>
   </body>
 </html>

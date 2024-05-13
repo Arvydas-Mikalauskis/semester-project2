@@ -9,7 +9,7 @@ export function displayListings(listings) {
   listings.forEach((listing) => {
     const cardContainer = document.createElement('div')
     cardContainer.className =
-      'flex flex-col items-center justify-between h-full p-6 m-3 bg-white rounded-2xl shadow-2xl space-y-4  duration-200 hover:scale-105'
+      'flex flex-col items-center mx-12 justify-between h-full p-4  bg-white rounded-2xl shadow-2xl space-y-4  duration-200 hover:scale-105 sm:mx-0 border-2 border-gray-200'
 
     const listingImage_container = document.createElement('div')
     if (listing.media && listing.media.length > 0) {
@@ -19,7 +19,7 @@ export function displayListings(listings) {
       listingImage.alt = listing.media[0].alt
       listingImage_container.appendChild(listingImage)
     } else {
-      listingImage_container.innerHTML = `<img src="https://via.placeholder.com/150" alt="placeholder"/>`
+      listingImage_container.innerHTML = `<img src="https://via.placeholder.com/250" alt="placeholder"/>`
     }
     cardContainer.appendChild(listingImage_container)
 
@@ -30,33 +30,39 @@ export function displayListings(listings) {
 
     const listingDescription = document.createElement('div')
     listingDescription.className =
-      'text-md font-light text-gray-400 h-16 overflow-hidden'
+      'text-md font-light text-gray-400 md:h-16 sm:h-8 overflow-hidden'
     listingDescription.innerHTML = listing.description
       ? `<p>${listing.description}</p>`
       : `<p>Description not provided</p>`
     cardContainer.appendChild(listingDescription)
 
+    const biddingStatus = document.createElement('div')
+    biddingStatus.className =
+      'flex flex-col justify-evenly border-x-2 items-center w-full'
+    cardContainer.appendChild(biddingStatus)
+
     if (listing.bids && listing.bids.length > 0) {
-      const bidsInfo = document.createElement('div')
-      bidsInfo.className = ' text-sm font-medium text-green-500 uppercase'
-      bidsInfo.innerHTML = `<p>Current bid: $${
+      const currentBid = document.createElement('div')
+      currentBid.className =
+        ' flex  justify-center items-center  text-sm font-medium text-green-500 uppercase'
+      currentBid.innerHTML = `<p>Current bid:</p> <p> $${
         listing.bids[listing.bids.length - 1].amount
       }</p>`
 
-      cardContainer.appendChild(bidsInfo)
+      biddingStatus.appendChild(currentBid)
     } else {
       const noBids_yet = document.createElement('div')
       noBids_yet.className = 'text-md font-light text-gray-400'
       noBids_yet.innerHTML = `<p>No bids yet</p>`
-      cardContainer.appendChild(noBids_yet)
+      biddingStatus.appendChild(noBids_yet)
     }
 
     const deadline = document.createElement('div')
-    deadline.className = 'text-md font-light text-softRed italic'
-    deadline.innerHTML = `<p>Ends at: ${new Date(
+    deadline.className = 'flex text-sm text-softRed italic'
+    deadline.innerHTML = `<p>Ends at:</p> <p> ${new Date(
       listing.endsAt
     ).toLocaleTimeString()}</p>`
-    cardContainer.appendChild(deadline)
+    biddingStatus.appendChild(deadline)
 
     const bidButton = document.createElement('button')
     bidButton.className =

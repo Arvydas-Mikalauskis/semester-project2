@@ -27,9 +27,11 @@ export async function getSingleListing(id) {
         }`
       : 'No bids yet'
 
-  document.getElementById('bid-endsAt').textContent = new Date(
+  document.getElementById(
+    'bid-endsAt'
+  ).textContent = `Auction ends at: ${new Date(
     data.data.endsAt
-  ).toLocaleTimeString()
+  ).toLocaleTimeString()} `
 
   document.getElementById('placeBid-modal').classList.remove('hidden')
   document.getElementById('placeBid-modal').classList.add('flex')

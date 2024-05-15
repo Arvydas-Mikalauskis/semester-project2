@@ -1,13 +1,5 @@
 import { listingsUrl, API_KEY } from '../constants/urlEndpoints.js'
 
-// This function is used to create a new listing
-// get input values from the form
-// create a new listing object
-// send a POST request to the API with the new listing object
-// display a new listing on the page, by calling displayListings function
-// if the request is successful, show message of success and refresh the page
-// if the request fails, show an error message
-
 export async function createListing() {
   const createListingForm = document.getElementById('createNewListing')
   createListingForm.addEventListener('submit', async (e) => {
@@ -21,7 +13,12 @@ export async function createListing() {
     const newListing = {
       title,
       description,
-      media: { url: image },
+      media: [
+        {
+          url: image,
+          alt: 'Description of image',
+        },
+      ],
       endsAt,
     }
 
@@ -43,7 +40,9 @@ export async function createListing() {
         alert(data.message)
       } else {
         alert('Listing created successfully')
-        window.location.reload()
+        setTimeout(() => {
+          window.location.reload()
+        }, 1500)
       }
     } catch (error) {
       console.log('Error:', error)

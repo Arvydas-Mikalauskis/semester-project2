@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../styles/output.css" />
     <script src="../app/utils/mobileNAV.js" defer type="module"></script>
     <script src="../app/authentication/login.js" defer type="module"></script>
+    <script type="module" src="../app/authentication/auth.js"></script>
 
     <title>Home</title>
   </head>
@@ -55,6 +56,12 @@
             class="text-white bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white"
             >Login</a
           >
+          <a
+            id="logoutBtn"
+            href=""
+            class="text-white hidden bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white"
+            >Logout</a
+          >
         </div>
         <!-- Mr hamburger menu -->
         <button
@@ -72,7 +79,7 @@
         class="fixed inset-0 z-20 hidden flex-col items-center self-end h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
       >
         <div class="w-full py-3 text-center">
-          <a href="" class="block hover:text-softRed">Auction</a>
+          <a href="auction.html" class="block hover:text-softRed">Auction</a>
         </div>
         <div class="w-full py-3 text-center">
           <a href="#faq-accordion" class="block hover:text-softRed">FAQ</a>
@@ -81,7 +88,10 @@
           <a href="#footer" class="block hover:text-softRed">Contact</a>
         </div>
         <div class="w-full py-3 text-center">
-          <a href="" class="block hover:text-softRed">Login</a>
+          <a id="mobileNAV_loginBtn" class="block hover:text-softRed">Login</a>
+          <a href="" id="mobileNAV_logOutBtn" class="block hover:text-softRed"
+            >Logout</a
+          >
         </div>
       </div>
     </nav>
@@ -109,12 +119,14 @@
             id="loginEmail"
             type="text"
             placeholder="email@stud.noroff.no"
+            required
             class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
           />
           <input
             id="loginPassword"
             type="password"
             placeholder="password"
+            required
             class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
           />
           <button
@@ -320,7 +332,7 @@
     </section>
     <!-- Invite to register section  -->
 
-    <section>
+    <section id="registerPromo">
       <div
         class="container mt-32 flex flex-col mx-auto items-center justify-center gap-12 mb-24 md:-mt-20"
       >
@@ -511,7 +523,6 @@
           Stay up-to-date with the latest offers
         </h2>
         <form
-          action=""
           class="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0"
         >
           <div

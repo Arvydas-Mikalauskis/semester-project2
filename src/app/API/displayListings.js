@@ -67,7 +67,7 @@ export function displayListings(listings) {
     const bidButton = document.createElement('button')
     bidButton.className =
       'bg-softBlue text-white font-semibold w-full h-10 rounded-lg shadow-md hover:bg-blue-500 transition duration-200'
-    bidButton.innerText = 'Place a bid'
+    bidButton.innerText = 'View Listing'
     bidButton.dataset.itemId = listing.id
     cardContainer.appendChild(bidButton)
     bidButton.addEventListener('click', getListingID)

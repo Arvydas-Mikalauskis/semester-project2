@@ -16,5 +16,5 @@ This project is an online auction platform built with Vanilla JavaScript and sty
 ## Installation
 To set up the project locally, follow these steps:
 1. Clone the repository:
-2. install dependencies with -  "npm i -y"
+2. install dependencies with -  "npm install"
 3. Run build script -  "npm run build"

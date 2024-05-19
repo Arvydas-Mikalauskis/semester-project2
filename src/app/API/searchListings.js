@@ -12,7 +12,7 @@ export async function searchAuctionListings(query) {
     },
   })
   const data = await response.json()
-  console.log(data)
+
   displayListings(data.data)
 }
 

@@ -13,6 +13,4 @@ export async function placeBid(id, amount) {
     }),
   })
   const data = await response.json()
-
-  console.log(data)
 }

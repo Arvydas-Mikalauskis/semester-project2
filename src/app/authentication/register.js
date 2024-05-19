@@ -48,14 +48,14 @@ async function registerUser(event) {
     if (!response.ok) {
       const errorMessage = await response.json()
       registerBtn.innerText = 'Registration failed. Try again.'
-      registerBtn.classList.remove('bg-cyan-700')
+      registerBtn.classList.remove('bg-softBlue')
       registerBtn.classList.add('bg-red-500')
       registerForm.reset()
       setTimeout(() => {
         registerBtn.innerText = 'Register'
         registerBtn.classList.remove('bg-red-500')
-        registerBtn.classList.add('bg-cyan-700')
-      }, 3000)
+        registerBtn.classList.add('bg-softBlue')
+      }, 1500)
       console.error('Failed to register user', errorMessage)
       throw new Error(
         `Failed to register. Status: ${response.status}. Error: ${
@@ -64,14 +64,13 @@ async function registerUser(event) {
       )
     }
     const data = await response.json()
-    registerBtn.innerText = 'Registration successful'
-    registerBtn.classList.remove('bg-cyan-700')
+    registerBtn.innerText = 'Registration successful. You can now log in.'
+    registerBtn.classList.remove('bg-softBlue')
     registerBtn.classList.add('bg-green-500')
 
     setTimeout(() => {
-      window.location.href = 'auction.html'
+      window.location.href = 'index.html'
     }, 2000)
-    console.log('User registered', data)
   } catch (error) {
     console.error('Error registering user', error)
   }

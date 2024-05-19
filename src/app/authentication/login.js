@@ -30,14 +30,12 @@ async function loginUser(url, data) {
   const loginJson = await loginResponse.json()
 
   if (loginResponse.status === 200) {
-    console.log(loginJson)
     const accessToken = loginJson.data.accessToken
     const profileName = loginJson.data.name
     localStorage.setItem('token', accessToken)
     localStorage.setItem('name', profileName)
     window.location.href = 'auction.html'
   } else {
-    console.log(loginJson)
     alert('Incorrect email or password')
   }
 }

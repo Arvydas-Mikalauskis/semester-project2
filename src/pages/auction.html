@@ -18,6 +18,7 @@
     <script type="module" src="../app/API/getListings.js" defer></script>
     <script type="module" src="../app/authentication/auth.js" defer></script>
     <script type="module" src="../app/utils/mobileNAV.js" defer></script>
+    <script type="module" src="../app/authentication/login.js"></script>
     <title>Auction</title>
   </head>
   <body>
@@ -189,6 +190,61 @@
         class="container grid grid-cols-1 mx-auto gap-6 mt-16 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2"
       >     
       </div> 
+
+      <!-- Log in modal -->
+
+    <!-- Modal -->
+    <div
+    id="loginModal"
+    class="fixed flex hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+    style="z-index: 300"
+  >
+    <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
+      <h2 class="text-2xl text-center mb-2 font-semibold">Log In</h2>
+      <img
+        class="h-10 mx-auto"
+        id="logo"
+        src="../assets/images/sold.svg"
+        alt="Logo"
+      />
+
+      <form id="loginForm">
+        <input
+          id="loginEmail"
+          type="text"
+          placeholder="email@stud.noroff.no"
+          required
+          class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+        />
+        <input
+          id="loginPassword"
+          type="password"
+          placeholder="password"
+          required
+          class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+        />
+        <button
+          type="submit"
+          class="mt-4 px-4 py-2 bg-softBlue bg-opacity-90 text-white rounded hover:bg-opacity-100 w-full"
+        >
+          Proceed
+        </button>
+        <button
+          type="button"
+          id="closeModal"
+          class="mt-4 px-4 py-2 bg-softRed text-white rounded hover:bg-red-600 w-full"
+        >
+          Close
+        </button>
+        <p class="mt-4 text-sm">
+          Don't have an account?
+          <a href="signUp.html" class="text-green-500 font-medium"
+            >Register new profile</a
+          >
+        </p>
+      </form>
+    </div>
+  </div>
 
       
 

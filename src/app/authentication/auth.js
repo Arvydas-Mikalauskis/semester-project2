@@ -26,5 +26,7 @@ mobileLogoutButton.addEventListener('click', logout)
 
 function logout() {
   localStorage.removeItem('token')
+  localStorage.removeItem('name')
+  alert('You have been logged out')
   location.reload()
 }

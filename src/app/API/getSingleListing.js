@@ -39,6 +39,4 @@ export async function getSingleListing(id) {
   document.getElementById('close-bidModal').addEventListener('click', () => {
     document.getElementById('placeBid-modal').classList.add('hidden')
   })
-
-  console.log(data)
 }

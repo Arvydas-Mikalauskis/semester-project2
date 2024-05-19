@@ -42,7 +42,7 @@ export async function updateProfile() {
       updateProfileModal.classList.remove('flex')
       updateProfileModal.classList.add('hidden')
       window.location.reload()
-    }, 2000)
+    }, 1500)
   }
 }
 

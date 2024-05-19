@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/558153e5d0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../styles/output.css" />
+    <script src="../app/utils/mobileNAV.js" type="module" defer></script>
+    <script type="module" src="../app/API/getListings.js" defer></script>
+    <script type="module" src="../app/authentication/auth.js" defer></script>
+    <script type="module" src="../app/utils/mobileNAV.js" defer></script>
+    <script type="module" src="../app/authentication/login.js"></script>
+    <title>Auction</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="container relative mx-auto p-6">
+      <div class="flex items-center justify-between space-x-20 my-6">
+        <div class="z-30">
+          <img
+            class="h-10"
+            id="logo"
+            src="../assets/images/sold.svg"
+            alt="Logo"
+          />
+        </div>
+        <div
+          class="hidden items-center space-x-10 uppercase text-grayBlue md:flex"
+        >
+          <a href="index.html" class="tracking-widest text-grayBlue hover:text-softRed"
+            >Homepage</a
+          >
+          
+          <a
+            id="loginBtn"
+            href=""
+            class="text-white bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white"
+            >Login</a
+          >
+          <a
+            id="logoutBtn"
+            href=""
+            class="text-white hidden bg-softRed border-2 border-softRed rounded-lg shadow-md px-8 py-2 hover:text-softRed hover:bg-white"
+            >Logout</a
+          >
+        </div>
+        <!-- Mr hamburger menu -->
+        <button
+          id="hamburgerMenu-btn"
+          class="z-30 block md:hidden focus:outline-none hamburger"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <!-- Mobile nav menu -->
+      <div
+        id="mobileMenu"
+        class="fixed inset-0 z-20 hidden flex-col items-center self-end h-full max-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+      >
+        <div class="w-full py-3 text-center">
+          <a href="" class="block hover:text-softRed">Home</a>
+        </div>        
+        <div class="w-full py-3 text-center">
+          <a href="" id="mobileNAV_loginBtn" class="block hover:text-softRed">Login</a>
+          <a href="" id="mobileNAV_logOutBtn" class="block hover:text-softRed">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <section>
+      <div
+        class="container flex flex-col items-center mx-auto p-6 lg:flex-row lg:mb-2"
+      >
+        <div class="w-full lg:w-1/2 md:w-3/4">
+          <img
+            class=""
+            src="../assets/images/online-shopping-concept.svg"
+            alt=""
+          />
+        </div>
+        <div class="lg:w-1/2">
+          <h4
+            class="text-xl text-grayBlue text-center lg:text-2xl tracking-widest lg:text-right"
+          >
+            Our online auction brings together a diverse array of items listed
+            by our registered users. Dive into a seamless bidding experience and
+            claim your next prized possession or hidden gem.
+          </h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile display, add post button -->
+    <section id="welcomeUser_section">
+      <h3 class="text-2xl font-semibold text-grayBlue text-center mt-12 mb-2">Welcome back</h3>
+      <div class="container w-fit flex flex-col items-center justify-center gap-4 mx-auto  mt-2">
+        <!-- Profile card -->
+        
+        <div
+          id="profileCard"
+          class="relative flex flex-col items-center gap-2 border-2 p-8 border-gray-100 bg-gradient-to-r from-indigo-700 to-purple-500 backdrop-blur-lg rounded-2xl shadow-2xl space-y-2 md:flex-row"
+         >
+          <div class="flex flex-col mx-auto md:pr-4 md:border-r-2 ">
+            <img
+              id="profileAvatar"
+              class="object-cover w-24 h-24 rounded-lg shadow-lg border-2 border-gray-100"
+              src=""
+              alt=""
+            />
+            <button
+              id="editProfileBtn"
+              class="bg-veryDarkBlue opacity-80  font-light text-gray-200 border-1 mt-2 border-blue-100 shadow-sm rounded-md p-2 hover:text-white hover:scale-105 hover:opacity-100 duration-200"
+            >
+              Edit Profile
+            </button>
+          </div>
+          <div class="flex flex-col px-8 py-2">
+            <h4
+              id="userName"
+              class="text-xl font-openSans text-center text-white font-semibold"
+            ></h4>
+            <p
+              id="profileBio"
+              class="font-light text-center text-white font-openSans py-2"
+            ></p>
+            <p
+              id="userCredits"
+              class="font-light text-white text-center"
+            ></p>
+
+            <!-- Post bid  -->
+            <div
+              class="flex justify-center items-center border-2 border-gray-100  bg-softRed opacity-90 hover:opacity-100 rounded-xl shadow-xl  mt-2 "
+            >
+              <button
+                id="openCreateListingModal"
+                class="text-gray-100 p-3 hover:scale-105 duration-200"
+              >
+                Create your own new listing
+                <i class="fa-solid fa-landmark"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Search/ filter products section -->
+    <section>
+      <div>
+        <h1 class="text-3xl text-softRed font-semibold text-center mt-14">
+          Active Auctions
+        </h1>
+      </div>
+      <!-- Search bar -->
+      <div
+        class="flex mt-12 px-4 py-3 border-b border-b-slate-600 focus-within:border-b-softRed overflow-hidden max-w-md mx-auto font-sans"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 192.904 192.904"
+          width="18px"
+          class="fill-gray-600 mr-3"
+        >
+          <path
+            d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z"
+          ></path>
+        </svg>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search..."
+          class="w-full outline-none text-sm"
+        />
+      </div>
+    </section>
+
+    <section>
+      <div
+        id="listingsContainer"
+        class="container grid grid-cols-1 mx-auto gap-6 mt-16 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2"
+      >     
+      </div> 
+
+      <!-- Log in modal -->
+
+    <!-- Modal -->
+    <div
+    id="loginModal"
+    class="fixed flex hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+    style="z-index: 300"
+  >
+    <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
+      <h2 class="text-2xl text-center mb-2 font-semibold">Log In</h2>
+      <img
+        class="h-10 mx-auto"
+        id="logo"
+        src="../assets/images/sold.svg"
+        alt="Logo"
+      />
+
+      <form id="loginForm">
+        <input
+          id="loginEmail"
+          type="text"
+          placeholder="email@stud.noroff.no"
+          required
+          class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+        />
+        <input
+          id="loginPassword"
+          type="password"
+          placeholder="password"
+          required
+          class="mt-4 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+        />
+        <button
+          type="submit"
+          class="mt-4 px-4 py-2 bg-softBlue bg-opacity-90 text-white rounded hover:bg-opacity-100 w-full"
+        >
+          Proceed
+        </button>
+        <button
+          type="button"
+          id="closeModal"
+          class="mt-4 px-4 py-2 bg-softRed text-white rounded hover:bg-red-600 w-full"
+        >
+          Close
+        </button>
+        <p class="mt-4 text-sm">
+          Don't have an account?
+          <a href="signUp.html" class="text-green-500 font-medium"
+            >Register new profile</a
+          >
+        </p>
+      </form>
+    </div>
+  </div>
+
+      
+
+      <!-- Post a listing modal -->
+      <!-- Modal -->
+      <div
+        id="postBidModal"
+        class="fixed hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+        style="z-index: 300"
+       >
+        <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
+          <h2 class="text-2xl text-center mb-2 font-semibold">
+            Create new listing
+          </h2>
+          <div class="text-center p-2">
+            <i class="fa-solid fa-xl fa-landmark"></i>
+          </div>
+
+          <form id="createNewListing">
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Listings title:
+            </p>
+            <input
+              id="listingTitle"
+              type="text"
+              placeholder="Ex: Used mountain bike"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Add image of your listing:
+            </p>
+            <input
+              id="listingImage"
+              type="url"
+              placeholder="Must be publicly available url adress"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Short description:
+            </p>
+            <textarea
+              class="mt-0 p-6 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+              name="listingDescription"
+              id="listingDescription"
+              placeholder="Ex: Used mountain bike, good condition, 21 gears, 29 inch wheels, hydraulic disc brakes, etc."
+              cols="30"
+              rows="3"
+            ></textarea>
+            <p class="align-middle mt-4 italic text-grayBlue">
+              End date of the auction:
+            </p>
+            <input
+              id="endsAt"
+              type="date"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+
+            <button
+              id="postBid-btn"
+              type="submit"
+              class="mt-4 px-4 py-2 bg-softBlue bg-opacity-90 text-white rounded hover:bg-opacity-100 w-full"
+            >
+              Proceed
+            </button>
+            <button
+              type="button"
+              id="closeNewlistingModal"
+              class="mt-4 px-4 py-2 bg-softRed text-white rounded hover:bg-red-600 w-full"
+            >
+              Close
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Profile card modal -->
+      <!-- Modal -->
+      <div
+        id="editProfileModal"
+        class="fixed hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+        style="z-index: 300"
+      >
+        <div class="bg-white p-8 rounded-xl shadow-md max-w-sm">
+          <h2 class="text-2xl text-center mb-2 font-semibold">
+            Edit your profile info;
+          </h2>
+          <div class="text-center p-2">
+            <i class="fa-regular fa-xl fa-pen-to-square"></i>
+          </div>
+
+          <form id="updateProfileForm">
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Change your avatar
+            </p>
+            <input
+              id="changeAvatar"
+              type="url"
+              placeholder="Please insert publicly available url adress"
+              class="mt-0 p-2 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+            />
+            <p class="align-middle mt-4 italic text-grayBlue">
+              Add something about yourself
+            </p>
+            <textarea
+              class="mt-0 p-6 border rounded shadow-md w-full focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+              name="changeBio"
+              id="changeBio"
+              cols="30"
+              rows="3"
+            ></textarea>
+
+            <button
+              id="updateProfileBtn"
+              type="submit"
+              class="mt-4 px-4 py-2 bg-softBlue bg-opacity-90 text-white rounded hover:bg-opacity-100 w-full"
+            >
+              Proceed
+            </button>
+            <button
+              type="button"
+              id="closeEditProfileModal"
+              class="mt-4 px-4 py-2 bg-softRed text-white rounded hover:bg-red-600 w-full"
+            >
+              Close
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Place a bid modal -->
+      <!-- Modal -->
+      <div
+        id="placeBid-modal"
+        class="fixed hidden inset-0 bg-gray-600 bg-opacity-70 justify-center items-center"
+        style="z-index: 300"
+      >
+        <div
+          class="container bg-white w-fit py-8 px-12 rounded-xl shadow-md max-w-xl relative"
+         >
+          <i
+            id="close-bidModal"
+            class="fa-regular fa-xl fa-circle-xmark absolute top-10 right-10 hover:scale-105 duration-200 cursor-pointer hover:text-softRed"
+          ></i>
+
+          <div class="flex flex-col mt-4 px-6 md:flex-row">
+            <div class="flex flex-col items-center w-full">
+              <img
+                class="object-cover w-60 h-60 rounded-lg shadow-lg md:mr-8 sm:m-0"
+                id="productImg"
+                src=""
+                alt="Product image"
+              />
+            </div>
+            <div class="flex flex-col items-center gap-3 w-full">
+              <h4
+                id="listing-title"
+                class="text-xl font-medium text-center uppercase"
+              >
+                Title
+              </h4>
+              <p id="listing-descr" class="text-center text-sm text-grayBlue">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut,
+                repudiandae?
+              </p>
+              <p
+                id="currentBid"
+                class="text-center mt-4 text-sm font-medium text-green-500"
+              ></p>
+              <p
+                id="bid-endsAt"
+                class="text-center text-sm text-softRed italic"
+              ></p>
+              <input
+                id="placeBidInput"
+                type="number"
+                placeholder="Place a bid..."
+                class="mt-0 p-2 border rounded shadow-md focus:outline-none focus:scale-105 focus:border-softBlue focus:border-opacity-40"
+              />
+              <div class="group">
+                <button
+                  id="sendBid-btn"
+                  class="w-full transition-all duration-150 bg-blue-700 text-white border-b-8 border-b-blue-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-blue-700 group-hover:border-t-blue-700 group-hover:shadow-lg"
+                >
+                  <div
+                    class="px-8 py-2 duration-150 bg-blue-500 rounded-lg group-hover:bg-blue-700"
+                  >
+                    Place a bid
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="flex w-full items-center justify-center mt-16 gap-20 mb-20">
+        <button
+          id="prevPage"
+          class="bg-softRed w-40 text-white p-2 rounded-lg hover:scale-105 duration-200 hover:bg-red-500"
+        >
+          <i class="fa-solid fa-arrow-left"></i> Previous
+        </button>
+        <button
+          id="nextPage"
+          class="bg-softRed w-40 text-white p-2 rounded-lg hover:scale-105 duration-200 hover:bg-red-500"
+        >
+          <i class="fa-solid fa-arrow-right"></i> Next
+        </button>
+      </div>      
+    </section> 
+    <!-- Testimonials -->
+    <section>
+      <div class="flex flex-col text-center items-center justify-center gap-6">
+        <div>
+          <h4 class="text-2xl font-semibold mb-2 text-grayBlue">Read trusted reviews from our customers;</h4>
+          <p class="text-sm font-openSans tracking-widest text-grayBlue">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste harum voluptatum dolore?</p>
+        </div>
+        <div id="testimonials" class="bg-white  container sm:w-fit lg:w-2/3 p-12 rounded-2xl shadow-2xl border-2 border-grayBlue border-opacity-40">         
+        </div>
+        <div class="flex gap-8">
+          <button id="nextTestimonial"><i class="fa-solid fa-2xl  text-softRed hover:text-red-500 hover:scale-105 duration-200 fa-circle-arrow-left"></i></button>
+          <button id="prevTestimonial"><i class="fa-solid fa-2xl text-softRed hover:text-red-500 hover:scale-105 duration-200 fa-circle-arrow-right"></i></button>
+        </div>
+        
+      </div>
+      
+    </section>   
+    <!-- Footer -->
+    <footer id="footer" class="bg-veryDarkBlue mt-24">
+      <div class="mx-w-lg mx-auto py-12">
+        <p
+          class="mb-6 text-lg -tracking-widest text-center text-white uppercase"
+        >
+          +10,000 Members already Joined us
+        </p>
+        <h2 class="px-3 mb-6 text-3xl font-semibold text-center text-white">
+          Stay up-to-date with the latest offers
+        </h2>
+        <form
+          action=""
+          class="flex flex-col items-start justify-center max-w-2xl mx-auto space-y-6 text-base px-6 md:flex-row md:space-y-0 md:space-x-4 md:px-0"
+        >
+          <div
+            class="flex flex-col justify-between items-center mx-auto md:flex-row md:mx-0"
+          >
+            <input
+              type="text"
+              placeholder="Enter your email adress"
+              class="flex-1 px-6 pt-3 pb-2 mb-4 rounded-lg border-1 border-white focus-within:outline-none md:mr-3 md:mb-0"
+            />
+
+            <input
+              type="submit"
+              value="Contact Us"
+              class="inline-flex px-6 py-3 font-semibold text-center text-white duration-200 transform rounded-lg cursor-pointer focus:outline-none bg-softRed hover:opacity-90"
+            />
+          </div>
+        </form>
+        <h4
+          class="px-3 mb-0 mt-8 text-xl font-semibold text-center uppercase underline decoration-softRed underline-offset-4 text-white md:text-lg"
+        >
+          Contact Us on:
+        </h4>
+        <div class="flex gap-12 justify-center text-white mt-2">
+          <a href="https://www.facebook.com/"
+            ><i
+              class="fa-brands fa-2xl fa-facebook hover:text-softRed duration-200"
+            ></i
+          ></a>
+          <a href="https://www.instagram.com/"
+            ><i
+              class="fa-brands fa-2xl fa-instagram hover:text-softRed duration-200"
+            ></i
+          ></a>
+          <a href="#112"
+            ><i
+              class="fa-solid fa-2xl fa-phone hover:text-softRed duration-200"
+            ></i
+          ></a>
+        </div>
+      </div>
+    </footer>  
+
+    <script src="../app/API/getProfile.js" defer type="module"></script>
+    <script type="module" src="../app/ui/testimonialsCarousel.js"></script>
+  </body>
+</html>

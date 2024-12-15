@@ -34,7 +34,7 @@ To leverage the skills learned over three semesters to create a functional, inte
 ---
 
 ## Technical Requirements
-- **API Documentation:** [Noroff Auction API Swagger Documentation]([#](https://docs.noroff.dev/docs/v2/auction-house/listings)).
+- **API Documentation:** [Noroff Auction API Swagger Documentation](https://docs.noroff.dev/docs/v2/auction-house/listings).
 - **CSS Framework:** Tailwind CSS (v3.0.0 or newer).
 
 ---
